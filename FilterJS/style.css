@@ -1,0 +1,172 @@
+:root{
+    --dominant-brand-color: rgb(121, 161, 255);
+    --aux-brand-color: rgb(247, 247, 247);
+    --text-color-dark: rgb(26, 26, 26);
+    --text-color-light: rgb(90, 90, 90);
+    --border-radius: 6px;
+}
+@font-face {
+    font-family: 'poppins';
+    src: url('Poppins/Poppins-Regular.ttf');
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins';
+}
+section.contact-container{
+    background: var(--aux-brand-color);
+    height: auto;
+    width: 50%;
+    border-radius: var(--border-radius);
+    margin: 0.5rem auto;
+}
+section.contact-container h2{
+    color: white;
+    font-size: 2.2rem;
+}
+section.contact-container div.search-area{
+    background: var(--dominant-brand-color);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    padding: 2rem;
+}
+.search-area input{
+    padding: 0.2rem;
+    border-radius: var(--border-radius);
+    border: none;
+}
+.search-area input[type="text"] {
+    width: 14rem;
+}
+.search-area input[type="button"] {
+    background: white;
+    color: var(--dominant-brand-color);
+    cursor: pointer;
+}
+
+div.contact-list{
+    padding: 0.1rem 1rem;
+}
+div.contact-list div{
+    padding: 1rem;
+    border-bottom: 2px solid rgb(229, 229, 229);
+}
+div.contact-list div:last-child{
+    border-bottom: none;
+}
+div.contact-list img{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100px;
+    border: 2px solid var(--dominant-brand-color);
+}
+div.contact-list div.contact{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+div.contact div.name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+.fa-solid{
+    cursor: pointer;
+}
+.fa-trash{
+    color: rgb(255, 77, 77);
+}
+.fa-pen{
+    color: rgb(0, 223, 0);
+}
+
+section.delete-modal {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    background: rgba(186, 186, 255, 0.76);
+    backdrop-filter: blur(6px);
+    height: 100vh;
+    width: 100%;
+}
+section.delete-modal div.del-content{
+    max-width: 30rem;
+    min-width: 16rem;
+    height: auto;
+    margin: 9rem auto;
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1rem;
+}
+div.btns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8rem auto 0 auto;
+    width: 90%;
+}
+div.del-content input{
+    padding: 0.4rem;
+    border: none;
+    border-radius: var(--border-radius);
+    color: whitesmoke;
+    cursor: pointer;
+}
+#continue{
+    background: rgb(47, 255, 102);
+}
+#cancel{
+    background: rgb(255, 69, 69);
+}
+.no-display{
+    display: none;
+}
+
+
+@media (max-width: 800px) {
+    section.contact-container{
+        width: 99%;
+    }
+}
+
+section.edit-modal{
+    position: fixed;
+    /* top: 8px;*/
+    right: 8px; 
+    padding: 1rem;
+    justify-content: center;
+    background: var(--aux-brand-color);
+    border-radius: var(--border-radius);
+    width: 15rem;
+    transition: all 0.5s ease;
+}
+section.edit-modal div.head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+div.head .fa-xmark{
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+div.head .fa-xmark:hover{
+    color: rgb(255, 68, 68);
+}
+section.edit-modal input{
+    padding: 0.1rem;
+    border: none;
+    border-radius: var(--border-radius);
+}
+section.edit-modal input[type="button"] {
+    background: var(--dominant-brand-color);
+    color: whitesmoke;
+}
+
+.hide-edit{
+    top: -300px;
+}
+.show-edit{
+    top: 10px;
+}
